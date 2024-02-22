@@ -1,12 +1,8 @@
-# sample
-Short Code Sample
+# Short Code Sample
 ---
-title: "API-202MA Problem Set 3"
-author: PRETEST_Oranda
-output:
-  pdf_document: default
-  html_document:
-    df_print: paged
+# Title: "API-202MA Problem Set 3"
+# Author: PRETEST_Oranda
+
 ---
 
 ```{r setup, include=FALSE}
