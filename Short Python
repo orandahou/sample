@@ -1,0 +1,24 @@
+import pandas as pd
+
+# URLs of the publicly shared CSV files
+url_sheet1 = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vTD1k9X9tC0tHvGUC-53wfFN5WCnfSIFO8K1OL_TYUqg75MCzfNMmT2Z62iHkiOncKF1orVVzrIR2xC/pub?gid=0&single=true&output=csv'
+url_sheet2 = 'https://docs.google.com/spreadsheets/d/e/2PACX-1vSnwhrfW-fkFQDTZbrikZQrYoikfJz-BLXhMSNOMx-gnultOuu2rS-40hBBGKb6ArzWT-bMuV39FGo2/pub?gid=0&single=true&output=csv'
+
+# Read the CSV files into pandas DataFrames
+df1 = pd.read_csv(url_sheet1)
+df2 = pd.read_csv(url_sheet2)
+
+# Merge the DataFrames on the 'bioguide_id' column
+merged_df = pd.merge(df1, df2, on='bioguide_id')
+
+# Select the specified columns
+selected_columns_df = merged_df[['bioguide_id', 'last_name', 'state_x', 'party', 'ideology']]
+
+# Set display options to show all rows and columns
+pd.set_option('display.max_rows', None)
+pd.set_option('display.max_columns', None)
+pd.set_option('display.width', None)
+pd.set_option('display.max_colwidth', None)
+
+# Print the new table
+print(selected_columns_df)
